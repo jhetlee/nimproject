@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block %}
+
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+<h1>VIA CLIENT LIST</h1>
+    </h1>
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Client Name</th>
+      <th scope="col">VIP</th>
+        <th scope="col">SR Number</th>
+    </tr>
+  </thead>
+        {% for client in clients %}
+        <tbody>
+        <tr><td>{{ client.client_name }}</td>
+        <td>{{ client.VIP }}</td>
+            <td>{{ client.sr_number }}</td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    </div>
+</div>
+{% endblock %}

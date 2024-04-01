@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block %}
+    <h1>Devices List</h1>
+    {% for device in device_list %}
+    <ul>
+        <li>{{ device.device_name }}</li>
+    </ul>
+    {% endfor %}
+{% endblock %}

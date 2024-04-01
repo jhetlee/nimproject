@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block %}
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>Devices List
+
+   <a href="{% url 'nim_app:device_create' %}"><button type="button" class="btn btn-primary" style="float:right; margin:5px;">Create Device</button></a>
+
+    </h1>
+    {% for device in device_list %}
+
+     <div class="card" style="width: 17rem; float:left;">
+    <div class="card-body">
+    <h5 class="card-title"><a href="{{device.id}}">{{ device.device_name }}</a></h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{device.oob_address}}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{device.rack_location}}</h6>
+     </div>
+    </div>
+      {% endfor %}
+        </div>
+</div>
+
+{% endblock %}
